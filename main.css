@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:300,400&display=swap');
+
+.headingtext{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-align: center;
+}
+.progressblock{
+  transform: translateY(-34%);
+}
+.fullbar{
+  width: 120px;
+  vertical-align: middle;
+  border-radius: 1em;
+  text-align: center;
+  margin: auto;
+}
+.progress{
+  width: 0;
+  height: 20px;
+  vertical-align: middle;
+  border-radius: 1em;
+}
+.textbar{
+  width: 120px;
+  vertical-align: middle;
+  opacity: 100%;
+  height: 100%;
+}
+.progresstext{
+  position: relative;
+  text-align: center;
+  width: 80%;
+  left:10%;
+  transform: translateY(-50%);
+  font-family: 'Lato', sans-serif;
+  font-size:small;
+}
+td,th{
+  text-align: center;
+  min-width: 100px;
+  font-family: 'Lato', sans-serif;
+  font-size: small;
+  font-weight: 300;
+}
+.tablenojs td, .tablenojs th{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+div.anime{
+	position: fixed;
+	right: 0px;
+	bottom: -5px;
+  z-index: -1;
+}
+div.animebox{
+  position: fixed;
+	right: 0px;
+	bottom: -5px;
+  z-index: 1;
+}
+
+/* DARK THEME */
+.body.theme_dark{
+  background-color: rgb(5,5,5);
+}
+.theme_dark .headingtext{
+  color:white;
+}
+.theme_dark .subheading{
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.theme_dark .clock{
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+}
+.theme_dark .button_dark{
+  display: inline-block;
+  height: auto; 
+  padding: 0; 
+  background-image: none;
+  background-color: transparent; 
+  color: #ffffff; 
+  border: 1px solid #ffffff; 
+  -webkit-transition: all 150ms ease-in-out; 
+  -moz-transition: all 150ms ease-in-out; 
+  -ms-transition: all 150ms ease-in-out; 
+  transition: all 150ms ease-in-out; 
+}
+.theme_dark .button_dark:hover{
+  background-color: #222222;
+}
+.theme_dark .button_light{
+  display: inline-block;
+  height: auto; 
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  -webkit-transition: all 150ms ease-in-out; 
+  -moz-transition: all 150ms ease-in-out; 
+  -ms-transition: all 150ms ease-in-out; 
+  transition: all 150ms ease-in-out
+}
+.theme_dark .button_light:hover{
+  background-color: transparent;
+  color: #ffffff;
+}
+.theme_dark .buttontext{
+  display: inline-block; 
+  height: auto; 
+  padding: 14px 30px; 
+  background: transparent; 
+  background-image: none;
+  color: inherit; 
+  letter-spacing: 0.03em; 
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+  font-size: 12px; 
+  line-height: 1; 
+  text-transform: uppercase;
+}
+.theme_dark .tableclass{
+  background-color: rgba(0,0,0,0.05);
+  color: rgb(255,255,255);
+}
+.theme_dark td, .theme_dark th{
+  border-color: rgb(255,255,255);
+  color: rgb(255,255,255);
+  border-style: solid;
+  border-width: 1px;
+  vertical-align: middle;
+  text-align: center;
+}
+.theme_dark .progress{
+  background-color: rgb(70,70,70);
+}
+.theme_dark .progresstext{
+  color: rgb(225,225,225);
+  top:55%;
+}
+.theme_dark .fullbar{
+  background-color: rgb(35,35,35);
+}
+.theme_dark .credits{
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  color: rgb(255,255,255);
+}
+.theme_dark .link{
+  color: rgb(158, 158, 158);
+}
+.theme_dark .easter{
+  color: rgb(158, 158, 158);
+  text-decoration: underline;
+}
+.theme_dark .info{
+  color: rgb(225,225,225);
+  font-size: 24px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* LIGHT THEME */
+.body.theme_light{
+  background-color: #eeeeee;
+}
+.theme_light .headingtext{
+  color:black;
+}
+.theme_light .subheading{
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 30px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.theme_light .clock{
+  font-family: 'Lato', sans-serif;
+  color: black;
+  font-size: 30px;
+  font-weight: 300;
+}
+.theme_light .button_dark{
+  display: inline-block;
+  height: auto; 
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  -webkit-transition: all 150ms ease-in-out; 
+  -moz-transition: all 150ms ease-in-out; 
+  -ms-transition: all 150ms ease-in-out; 
+  transition: all 150ms ease-in-out
+}
+.theme_light .button_dark:hover{
+  background-color: transparent;
+  color: #000000;
+}
+.theme_light .button_light{
+  display: inline-block;
+  height: auto; 
+  padding: 0; 
+  color: #000000; 
+  border: 1px solid #000000; 
+  -webkit-transition: all 150ms ease-in-out; 
+  -moz-transition: all 150ms ease-in-out; 
+  -ms-transition: all 150ms ease-in-out; 
+  transition: all 150ms ease-in-out; 
+}
+.theme_light .button_light:hover{
+  background-color: #dddddd;
+  color: #000000;
+}
+.theme_light .buttontext{
+  display: inline-block; 
+  height: auto; 
+  padding: 14px 30px; 
+  color: inherit; 
+  letter-spacing: 0.03em; 
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+  font-size: 12px; 
+  line-height: 1; 
+  text-transform: uppercase;
+}
+.theme_light .tableclass{
+  color: rgb(255,255,255);
+}
+.theme_light td, .theme_light th{
+  border-color: rgb(0,0,0);
+  color: rgb(0,0,0);
+  border-style: solid;
+  border-width: 1px;
+  vertical-align: middle;
+  text-align: center;
+}
+.theme_light .progress{
+  background-color: rgb(35,35,35);
+  font-weight:300;
+}
+.theme_light .progresstext{
+  color: rgb(255,255,255);
+  top:55%;
+}
+.theme_light .fullbar{
+  background-color: rgb(70,70,70);
+}
+.theme_light .credits{
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  color: rgb(0,0,0);
+}
+.theme_light .link{
+  color: rgb(0,0,0);
+}
+.theme_light .easter{
+  color: rgb(0,0,0);
+  text-decoration: underline;
+}
+.theme_light .info{
+  color: rgb(0,0,0);
+  font-size: 24px;
+  font-family: 'Lato', sans-serif;
+}
