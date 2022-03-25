@@ -94,7 +94,9 @@ checkMobile()
 checkCookie()
 
 function setCookie(cname, cvalue) {
-    document.cookie = cname + "=" + cvalue + ";" + " SameSite=None ; Secure; path=/";
+    var expiryDate = new Date();
+    expiryDate.setMonth(expiryDate.getMonth() + 6)
+    document.cookie = cname + "=" + cvalue + ";" + "Expires=" + expiryDate.toGMTString() + ";" + " SameSite=None; Secure; path=/";
 }
 
 function getCookie(cname) {
