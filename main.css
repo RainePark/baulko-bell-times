@@ -71,18 +71,6 @@ table{
   border-collapse: collapse;
   table-layout: fixed;
 }
-div.anime{
-	position: fixed;
-	right: 0px;
-	bottom: -5px;
-  z-index: -1;
-}
-div.animebox{
-  position: fixed;
-	right: 0px;
-	bottom: -5px;
-  z-index: 1;
-}
 
 /* DARK THEME */
 .body.theme_dark{
