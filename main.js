@@ -182,7 +182,7 @@ function updateprogress(){
 		else{
 			document.getElementsByClassName("progresstext")[0].innerHTML = "procrastinate hard!!!";
 		}
-		if(currentsec > (daydata.times[daydata.period.length-1]*60)){
+		if(currentsec > (daydata.times[daydata.times.length-1]*60)){
 			document.getElementsByClassName("progresstext")[daydata.period.length-1].innerHTML = "go home nerd";
 			document.title = "Baulko Bell Times"
 		}
