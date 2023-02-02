@@ -88,7 +88,11 @@ var random_images_array = ["1363382418078.png",
 "patreon-1.png",
 "patreon-2.png",
 "patreon-3.png",
-"sub1.png"
+"sub1.png",
+"osaka.png",
+"ayaka.png",
+"image.png",
+"aaaa.png"
 ];
 
 checkMobile()
