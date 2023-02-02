@@ -165,6 +165,7 @@ function updateprogress(){
 			}
 			else if ((currentsec > (daydata.times[2*a]*60)) && (currentsec < (daydata.times[2*a+1]*60))) {
 				document.getElementsByClassName("progresstext")[a+1].innerHTML = Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toString() + "m " + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toString() + "s";
+				document.title = "Baulko Bell Times (" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left)";
 			}
 		}
 		//time till school start
@@ -183,6 +184,7 @@ function updateprogress(){
 		}
 		if(currentsec > (daydata.times[daydata.period.length-1]*60)){
 			document.getElementsByClassName("progresstext")[daydata.period.length-1].innerHTML = "go home nerd";
+			document.title = "Baulko Bell Times"
 		}
 		else{
 			document.getElementsByClassName("progresstext")[daydata.period.length-1].innerHTML = "";
