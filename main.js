@@ -82,7 +82,7 @@ function getdatafortoday(){
 		daytimetable = JSON.parse(localStorage.getItem("userTimetable"))["Monday"]
 	}
 	// Toggle weekend to show or hide bell times on weekends (0=show,1=hide)
-	weekend = 0;
+	weekend = 1;
   }
   numberofperiods = daydata.period.length;
 }
