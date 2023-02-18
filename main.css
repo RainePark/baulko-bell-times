@@ -10,9 +10,9 @@
   transform: translateY(-34%);
 }
 .fullbar{
-  width: 120px;
+  width: 200px;
   vertical-align: middle;
-  border-radius: 1em;
+  border-radius: 0.1em;
   text-align: center;
   margin: auto;
 }
@@ -20,10 +20,10 @@
   width: 0;
   height: 20px;
   vertical-align: middle;
-  border-radius: 1em;
+  border-radius: 0.1em;
 }
 .textbar{
-  width: 120px;
+  width: 200px;
   vertical-align: middle;
   opacity: 100%;
   height: 100%;
@@ -36,17 +36,26 @@
   transform: translateY(-50%);
   font-family: 'Lato', sans-serif;
   font-size:small;
+  font-weight: 300;
+}
+.timetableinfo{
+  font-weight: 300;
 }
 td,th{
   text-align: center;
   min-width: 100px;
   font-family: 'Lato', sans-serif;
   font-size: small;
-  font-weight: 300;
+  font-weight: 400;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .tablenojs td, .tablenojs th{
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.notimetable{
+  font-weight: 300;
 }
 table{
   width: 100%;
@@ -273,4 +282,14 @@ div.animebox{
   color: rgb(0,0,0);
   font-size: 24px;
   font-family: 'Lato', sans-serif;
+}
+
+/* Mobile */
+@media screen and (max-width: 720px) {
+  .fullbar {
+      width: 100px;
+  }
+  .textbar {
+    width: 100px;
+  }
 }

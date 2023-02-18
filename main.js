@@ -2,8 +2,9 @@ var newday = new Date();
 var day = newday.getDay();
 var currentsec = newday.getHours()*3600+newday.getMinutes()*60+newday.getSeconds();
 var daydata;
+var daytimetable;
 var numberofperiods;
-var table = "<table>";
+var table = "<table id='tableid'>";
 var periodtimename = [];
 var theme = 0;
 var weekend = 1;
@@ -17,6 +18,7 @@ getdatafortoday();
 displaystartandfinishtime();
 writetotable();
 updateprogress();
+showtimetable();
 
 var updatetime = setInterval(update,1000);
 
@@ -33,6 +35,7 @@ function update(){
     updateprogress();
   }
 }
+
 function getdatafortoday(){
   newday = new Date();
   day = newday.getDay();
@@ -40,28 +43,46 @@ function getdatafortoday(){
   //get data for today's day
   if (day == 1){
     daydata = belltimes.Monday;
+	if (localStorage.getItem("userTimetable")!=null){
+		daytimetable = JSON.parse(localStorage.getItem("userTimetable"))["Monday"]
+	}
 	weekend = 0;
   }
   else if (day == 2){
     daydata = belltimes.Tuesday;
+	if (localStorage.getItem("userTimetable")!=null){
+		daytimetable = JSON.parse(localStorage.getItem("userTimetable"))["Tuesday"]
+	}
 	weekend = 0;	
   }
   else if (day == 3){
     daydata = belltimes.Wednesday;
+	if (localStorage.getItem("userTimetable")!=null){
+		daytimetable = JSON.parse(localStorage.getItem("userTimetable"))["Wednesday"]
+	}
 	weekend = 0;
   }
   else if (day == 4){
     daydata = belltimes.Thursday;
+	if (localStorage.getItem("userTimetable")!=null){
+		daytimetable = JSON.parse(localStorage.getItem("userTimetable"))["Thursday"]
+	}
 	weekend = 0;
   }
   else if (day == 5){
     daydata = belltimes.Friday;
+	if (localStorage.getItem("userTimetable")!=null){
+		daytimetable = JSON.parse(localStorage.getItem("userTimetable"))["Friday"]
+	}
 	weekend = 0;
   }
   else{
     daydata = belltimes.Monday;
-	//toggle weekend to show or hide bell times on weekends
-	weekend = 1;
+	if (localStorage.getItem("userTimetable")!=null){
+		daytimetable = JSON.parse(localStorage.getItem("userTimetable"))["Monday"]
+	}
+	// Toggle weekend to show or hide bell times on weekends (0=show,1=hide)
+	weekend = 0;
   }
   numberofperiods = daydata.period.length;
 }
@@ -84,7 +105,6 @@ function displaystartandfinishtime(){
 		periodtimename[a+1] = periodstarthour + ":" + periodstartmin + " - " + periodendhour + ":" + periodendmin;
 		}
 
-
 		// display first and last period times
 		var periodfirsthour = Math.floor(daydata.times[0]/60).toString();
 		var periodfirstmin = (daydata.times[0]%60).toString();
@@ -104,17 +124,16 @@ function displaystartandfinishtime(){
 	}
 }
 
-
 function writetotable(){
 	if (weekend == 0){
 		//first row
-		table = table + "<tr><td>" + daydata.period[0] + "</td><td>" + periodtimename[0] + "</td><td><div class='progressblock'><div class='fullbar'><div class='progress'><div class='textbar'><p class='progresstext'></p></div></div></div></div></td></tr>";
+		table = table + "<tr><td class='notimetable'>" + daydata.period[0] + "</td><td class='notimetable'>" + periodtimename[0] + "</td><td><div class='progressblock'><div class='fullbar'><div class='progress'><div class='textbar'><p class='progresstext'></p></div></div></div></div></td></tr>";
 		//all rows
 		for (a = 1; a<numberofperiods-1; a++){
-			table = table + "<tr><td>" + daydata.period[a] + "</td><td>" + periodtimename[a] + "</td><td><div class='progressblock'><div class='fullbar'><div class='progress'><div class='textbar'><p class='progresstext'></p></div></div></div></div></td></tr>";
+			table = table + "<tr><td class='notimetable'>" + daydata.period[a] + "</td><td class='notimetable'>" + periodtimename[a] + "</td><td><div class='progressblock'><div class='fullbar'><div class='progress'><div class='textbar'><p class='progresstext'></p></div></div></div></div></td></tr>";
 		}
 		//last row
-		table = table + "<tr><td>" + daydata.period[numberofperiods-1] + "</td><td>" + periodtimename[numberofperiods-1] + "</td><td><div class='progressblock'><div class='fullbar'><div class='progress'><div class='textbar'><p class='progresstext'></p></div></div></div></div></td></tr>";
+		table = table + "<tr><td class='notimetable'>" + daydata.period[numberofperiods-1] + "</td><td class='notimetable'>" + periodtimename[numberofperiods-1] + "</td><td><div class='progressblock'><div class='fullbar'><div class='progress'><div class='textbar'><p class='progresstext'></p></div></div></div></div></td></tr>";
 		table += "</table>";
 		document.getElementById("tableclass").innerHTML = table;
 	}
@@ -166,6 +185,8 @@ function updateprogress(){
 			else if ((currentsec > (daydata.times[2*a]*60)) && (currentsec < (daydata.times[2*a+1]*60))) {
 				document.getElementsByClassName("progresstext")[a+1].innerHTML = Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toString() + "m " + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toString() + "s";
 				document.title = "Baulko Bell Times (" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left)";
+				// Code for time in title first
+				// document.title = "[" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left] Baulko Bell Times";
 			}
 		}
 		//time till school start
@@ -192,5 +213,22 @@ function updateprogress(){
 	}
 	else{
 		weekend = 1;
+	}
+}
+
+function showtimetable(){
+	if (localStorage.getItem("userTimetable")!=null){
+		var tableindexes={};
+		for (let i=0; i < daydata['period'].length; i++){
+			if (['1','2','3','4','5','6','7','8'].includes(daydata['period'][i].slice(-1))){
+				tableindexes[daydata['period'][i].slice(-1)]=i;
+			}
+		}
+		for (let x=1; x < Object.keys(daytimetable).length+1; x++){
+			document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML+"<br>"+"<a class='timetableinfo'>"+daytimetable[x][0]+"</a>";
+			document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML.replace(" class=\"notimetable\"","")
+			document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+" || Teacher: "+daytimetable[x][2]+"</a>";
+			document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML.replace(" class=\"notimetable\"","")
+		}	
 	}
 }

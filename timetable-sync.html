@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Baulko Bell Times - Timetable Sync</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon\apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon\apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon\apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon\apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="icon\apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="icon\apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="icon\apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="icon\apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" href="icon\favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="icon\favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="icon\favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="icon\favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="icon\favicon-128.png" sizes="128x128" />
+	<meta name="application-name" content="&nbsp;"/>
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="msapplication-TileImage" content="icon\mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="icon\mstile-70x70.png" />
+	<meta name="msapplication-square150x150logo" content="icon\mstile-150x150.png" />
+	<meta name="msapplication-square310x310logo" content="icon\mstile-310x310.png" />
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63619236-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-63619236-4');
+	</script>
+	<meta name="google-site-verification" content="nE9R9Cjl1bjJ29-wPvHuXfFnjF9wEXMcl_8h3SaorKA" />
+</head>
+
+<body class="body theme_dark">
+	<div style="padding-left: 10px;"><p class="credits" style="text-align: left;"><a class="link" href="/">Click here to return to the main page</a></p></div>
+
+	<div>
+		<h1 class="headingtext">BAULKO BELL TIMES CLASSIC - TIMETABLE SYNC BETA</h1>
+	</div>
+	
+	<div >
+		<p class="info" style="margin-bottom: 8px;">Upload your timetable:</p>
+		<input type="file" id="timetableupload" name="timetableics" accept=".ics""></input>
+		<p class="credits" style="margin-top: 4px;" id="uploadstatus"></p>
+	</div>
+	<br>
+	<div>
+		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">How to Upload your Timetable</p>
+		<p class="credits" style="margin-top: 8px">1. Go to the "My Timetable" page on <a class="link" href="https://baulkham-h.sentral.com.au/portal/timetable/mytimetable" target="_blank">Sentral</a><br>2. Click the blue button near the top right that says "Export as iCal". This will download a file called my_timetable.ics<br>3. Click the button above and upload your timetable file<br>4. Make sure that the site says your timetable has been uploaded successfully. You can now return to the main bell times page and see your classes!<br>5. You can now delete the my_timetable.ics file from your computer (you do not need to keep the file downloaded as I store it in your browser)</p>
+	</div>
+	<br>
+	<div>
+		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">Privacy Policy</p>
+		<p class="credits" style="margin-top: 8px">Your timetable file is NOT uploaded to any servers and all timetable processing is done on your device. I cannot see your timetable, nor do I care to do so. The site does not collect any personal information from you and stores all timetable data locally on your browser.</p>
+	</div>
+	<br>
+	<div>
+		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">Other Details</p>
+		<p class="credits" style="margin-top: 8px">Thanks for being part of the beta release of this feature! Please note that it is still in beta and there may be issues (I hope not).<br><br>If the timetable sync doesn't work for you, please send an email to <a class="link" href="mailto:ergret@pm.me" target="_blank">ergret@pm.me</a> and let me know what the problem is (preferably with your my_timetable.ics file but if you do not wish to share this due to privacy reasons, that's fine as well).<br><br>Special thanks to all the contributors of <a class="link" href="https://github.com/kewisch/ical.js/" target="_blank">ical.js</a>. This functionality would not be possible without your hard work and generosity. ical.js is licensed under the <a class="link" href="https://www.mozilla.org/MPL/2.0/" target="_blank">Mozilla Public License</a>, version 2.0.</p>
+	</div>
+
+	<script src="theme.js"></script>
+	<script src="ical.js"></script>
+	<script src="uploadtimetable.js"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="/__/firebase/8.7.1/firebase-app.js"></script>
+
+	<!-- Initialize Firebase -->
+	<script src="/__/firebase/init.js"></script>
+</body>
+</html>
