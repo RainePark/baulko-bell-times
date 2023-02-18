@@ -147,6 +147,9 @@ function createTimetableJson(classarray,datearray){
         localStorage.removeItem("userTimetable");
     }
     localStorage.setItem("userTimetable", jsontimetable);
+    
+    // Send confirmation that timetable has been saved
+    document.getElementById("uploadstatus").innerHTML = "Timetable saved successfully! Please <a class='link' href='/'>return to the main page<a> to see your timetable.";
 }
 
 // Test if timetable has been saved to local storage
