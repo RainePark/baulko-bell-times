@@ -53,6 +53,7 @@ td,th{
 .tablenojs td, .tablenojs th{
   padding-top: 5px;
   padding-bottom: 5px;
+  font-weight: 300;
 }
 .notimetable{
   font-weight: 300;
