@@ -40,18 +40,36 @@
 </head>
 
 <body class="body theme_dark">
+	<div style="padding-left: 10px;"><p class="credits" style="text-align: left;"><a class="link" href="/">Click here to return to the main page</a></p></div>
+
 	<div>
-		<h1 class="headingtext">BAULKO BELL TIMES CLASSIC - TIMETABLE SYNC</h1>
+		<h1 class="headingtext">BAULKO BELL TIMES CLASSIC - TIMETABLE SYNC BETA</h1>
 	</div>
 	
-	<div style="float: left; width: 75%;">
-		<p class="credits">Upload your timetable:</p>
-		<input type="file" id="timetableupload" name="timetableics" accept=".ics"">
+	<div >
+		<p class="info" style="margin-bottom: 8px;">Upload your timetable:</p>
+		<input type="file" id="timetableupload" name="timetableics" accept=".ics""></input>
+		<p class="credits" style="margin-top: 4px;" id="uploadstatus"></p>
+	</div>
+	<br>
+	<div>
+		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">How to Upload your Timetable</p>
+		<p class="credits" style="margin-top: 8px">1. Go to the "My Timetable" page on Sentral<br>2. Click the blue button near the top right that says "Export as iCal". This will download a file called my_timetable.ics<br>3. Click the button above and upload your timetable file<br>4. Make sure that the site says your timetable has been uploaded successfully. You can now return to the main bell times page and see your classes!<br>5. You can now delete the my_timetable.ics file from your computer (you do not need to keep the file downloaded as I store it in your browser)</p>
+	</div>
+	<br>
+	<div>
+		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">Privacy Policy</p>
+		<p class="credits" style="margin-top: 8px">Your timetable file is NOT uploaded to any servers and all timetable processing is done on your device. I cannot see your timetable, nor do I care to do so. The site does not collect any personal information from you and stores all timetable data locally on your browser.</p>
+	</div>
+	<br>
+	<div>
+		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">Other Details</p>
+		<p class="credits" style="margin-top: 8px">Thanks for being part of the beta release of this feature! Please note that it is still in beta and there may be issues (I hope not).<br><br>If the timetable sync doesn't work and you want to help me fix it, please send an email to <a class="link" href="mailto:ergret@pm.me" target="_blank">ergret@pm.me</a> and let me know what the problem is (preferably with your my_timetable.ics file but if you do not wish to share this due to privacy reasons, that's fine as well).</p>
 	</div>
 
 	<script src="theme.js"></script>
 	<script src="ical.js"></script>
-	<script src="uploadtimetable.js"</script>
+	<script src="uploadtimetable.js"></script>
 
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="/__/firebase/8.7.1/firebase-app.js"></script>

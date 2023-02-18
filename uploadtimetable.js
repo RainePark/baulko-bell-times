@@ -153,8 +153,6 @@ function createTimetableJson(classarray,datearray){
 }
 
 // Test if timetable has been saved to local storage
-/* 
 if (localStorage.getItem("userTimetable")!=null){
     console.log(localStorage.getItem("userTimetable"))
 }
-*/
