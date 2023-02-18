@@ -56,6 +56,8 @@ td,th{
 }
 .notimetable{
   font-weight: 300;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 table{
   width: 100%;
