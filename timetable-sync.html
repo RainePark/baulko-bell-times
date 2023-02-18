@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Baulko Bell Times - Timetable Sync</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
+	<link href="main.css" rel="stylesheet" type="text/css" />
+	
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon\apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon\apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon\apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon\apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="icon\apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="icon\apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="icon\apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="icon\apple-touch-icon-152x152.png" />
+	<link rel="icon" type="image/png" href="icon\favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="icon\favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="icon\favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="icon\favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="icon\favicon-128.png" sizes="128x128" />
+	<meta name="application-name" content="&nbsp;"/>
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="msapplication-TileImage" content="icon\mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="icon\mstile-70x70.png" />
+	<meta name="msapplication-square150x150logo" content="icon\mstile-150x150.png" />
+	<meta name="msapplication-square310x310logo" content="icon\mstile-310x310.png" />
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63619236-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-63619236-4');
+	</script>
+	<meta name="google-site-verification" content="nE9R9Cjl1bjJ29-wPvHuXfFnjF9wEXMcl_8h3SaorKA" />
+</head>
+
+<body class="body theme_dark">
+	<div>
+		<h1 class="headingtext">BAULKO BELL TIMES CLASSIC - TIMETABLE SYNC</h1>
+	</div>
+	
+	<div style="float: left; width: 75%;">
+		<p class="credits">Upload your timetable:</p>
+		<input type="file" id="timetableupload" name="timetableics" accept=".ics"">
+	</div>
+
+	<script src="theme.js"></script>
+	<script src="ical.js"></script>
+	<script src="uploadtimetable.js"</script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="/__/firebase/8.7.1/firebase-app.js"></script>
+
+	<!-- Initialize Firebase -->
+	<script src="/__/firebase/init.js"></script>
+</body>
+</html>
