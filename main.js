@@ -20,6 +20,12 @@ writetotable();
 updateprogress();
 showtimetable();
 
+function isNumeric(str) {
+	if (typeof str != "string") return false // we only process strings!  
+	return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+		   !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+  }
+
 var updatetime = setInterval(update,1000);
 
 function update(){
@@ -225,10 +231,17 @@ function showtimetable(){
 			}
 		}
 		for (let x=1; x < Object.keys(daytimetable).length+1; x++){
-			document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML+"<br>"+"<a class='timetableinfo'>"+daytimetable[x][0]+"</a>";
-			document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML.replace(" class=\"notimetable\"","")
-			document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+" || Teacher: "+daytimetable[x][2]+"</a>";
-			document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML.replace(" class=\"notimetable\"","")
-		}	
+			cleanclassname=daytimetable[x][0].split(": ")[1].split(" ");
+			if (cleanclassname[0]=="Yr" && isNumeric(cleanclassname[1])){
+				cleanclassname.shift();
+				cleanclassname.shift();
+			}
+			cleanclassname=cleanclassname.join(" ");
+			document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML+"<br>"+"<a class='timetableinfo'>"+cleanclassname+" in "+daytimetable[x][1]+"</a>";
+			document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML.replace(" class=\"notimetable\"","");
+			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+" || Teacher: "+daytimetable[x][2]+"</a>";
+			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+"</a>";
+			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML.replace(" class=\"notimetable\"","");
+		}
 	}
 }
