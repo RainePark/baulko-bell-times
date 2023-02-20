@@ -15,7 +15,13 @@ myFile.addEventListener('change',function(){
         // Get vevent items from .ics file
         jcaldata=ICAL.parse(fileReader.result)[2];
         //console.log(jcaldata);
-        parseTimetable();
+        try {
+            parseTimetable();
+        }
+        catch {
+            document.getElementById("uploadstatus").innerHTML = "Status: Timetable upload failed. Please try again or check you have uploaded the correct file.";
+            document.getElementById("uploadstatus").style.color = "rgb(255,0,0)"
+        }
     }
    fileReader.readAsText(this.files[0]);
 })
@@ -150,12 +156,14 @@ function createTimetableJson(classarray,datearray){
     
     // Send confirmation that timetable has been saved
     document.getElementById("uploadstatus").innerHTML = "Status: Timetable saved successfully! Please <a class='link' href='/'>return to the main page<a> to see your timetable.";
+    document.getElementById("uploadstatus").style.color = "rgb(0,255,0)"
 }
 
 function clearTimetableStorage(){
     try{
         localStorage.removeItem('userTimetable')
         document.getElementById("uploadstatus").innerHTML = "Status: Timetable deleted successfully! <a class='link' href='/'>Click here<a> to return to the main page.";
+        document.getElementById("uploadstatus").style.color = "rgb(0,255,0)"
     }
     catch{}
 }
@@ -164,4 +172,5 @@ function clearTimetableStorage(){
 if (localStorage.getItem("userTimetable")!=null){
     console.log(localStorage.getItem("userTimetable"))
     document.getElementById("uploadstatus").innerHTML = "Status: Timetable already uploaded. Ready to accept new user upload...";
+    document.getElementById("uploadstatus").style.color = "rgb(0,200,0)"
 }
