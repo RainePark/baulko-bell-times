@@ -121,6 +121,7 @@ return "";
 }
 
 function showanimegirl() {
+    checkMobile()
     if (isMobile==false) {
         path = 'qts/'; 
         var num = Math.floor( Math.random() * random_images_array.length );
@@ -134,6 +135,7 @@ function showanimegirl() {
 }
 
 function toggleanime_text() {
+    checkMobile()
     if (!!document.getElementById("qt")==false && isMobile==false) {
         showanimegirl()
         window.alert("You found the easter egg! Anime girls will now show up every time you refresh the page! To disable it, just click on the image :)");
