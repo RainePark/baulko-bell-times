@@ -163,4 +163,6 @@ function clearTimetableStorage(){
 // Test if timetable has been saved to local storage
 if (localStorage.getItem("userTimetable")!=null){
     console.log(localStorage.getItem("userTimetable"))
+    document.getElementById("uploadstatus").innerHTML = "Status: Timetable already uploaded. Ready to accept new user upload...";
+
 }
