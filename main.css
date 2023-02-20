@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:300,400&display=swap');
 
+nav{
+  height: 30px;
+  margin: -16px -8px 0 -8px;
+}
 .headingtext{
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
@@ -91,6 +95,19 @@ div.animebox{
   font-size: 30px;
   font-weight: 400;
   text-decoration: none;
+}
+.theme_dark nav{
+  background-color: rgb(70,70,70);
+}
+.theme_dark .navtext{
+  color: rgb(225,225,225);
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  text-align: center;
+  line-height: 30px;
+}
+.theme_dark .navlink{
+  color: rgb(225,225,225);
 }
 .theme_dark .clock{
   font-family: 'Lato', sans-serif;
@@ -197,6 +214,19 @@ div.animebox{
   font-size: 30px;
   font-weight: 400;
   text-decoration: none;
+}
+.theme_light nav{
+  background-color: rgb(35,35,35);
+}
+.theme_light .navtext{
+  color: rgb(255,255,255);
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  text-align: center;
+  line-height: 30px;
+}
+.theme_light .navlink{
+  color: rgb(255,255,255);
 }
 .theme_light .clock{
   font-family: 'Lato', sans-serif;
