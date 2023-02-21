@@ -194,9 +194,10 @@ function updateprogress(){
 			}
 			else if ((currentsec > (daydata.times[2*a]*60)) && (currentsec < (daydata.times[2*a+1]*60))) {
 				document.getElementsByClassName("progresstext")[a+1].innerHTML = Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toString() + "m " + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toString() + "s";
-				document.title = "Baulko Bell Times (" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left)";
+				// Code for time in title last
+				//document.title = "Baulko Bell Times (" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left)";
 				// Code for time in title first
-				// document.title = "[" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left] Baulko Bell Times";
+				document.title = "[" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left] Baulko Bell Times";
 			}
 		}
 		//time till school start
