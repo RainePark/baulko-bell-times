@@ -156,14 +156,14 @@ function createTimetableJson(classarray,datearray){
     
     // Send confirmation that timetable has been saved
     document.getElementById("uploadstatus").innerHTML = "Status: Timetable saved successfully! Please <a class='link' href='/'>return to the main page<a> to see your timetable.";
-    document.getElementById("uploadstatus").style.color = "rgb(0,255,0)"
+    document.getElementById("uploadstatus").style.color = "rgb(0,200,0)"
 }
 
 function clearTimetableStorage(){
     try{
         localStorage.removeItem('userTimetable')
         document.getElementById("uploadstatus").innerHTML = "Status: Timetable deleted successfully! <a class='link' href='/'>Click here<a> to return to the main page.";
-        document.getElementById("uploadstatus").style.color = "rgb(0,255,0)"
+        document.getElementById("uploadstatus").style.color = "rgb(0,200,0)"
     }
     catch{}
 }
