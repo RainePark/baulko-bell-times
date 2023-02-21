@@ -1,3 +1,15 @@
+/*
+<div style="float: left; width:50%;" align="left">
+    <a href="https://time.is/" id="time_is_link" rel="nofollow" class="subheading" target="_blank">Current Time and Date: </a>
+    <br>
+    <span id="Sydney_z60b" class="clock"></span>
+    <script src="time.js"></script>
+    <script>
+    time_is_widget.init({Sydney_z60b:{template:"TIME<br>DATE", time_format:"12hours:minutes:seconds AMPM", date_format:"dayname, dnum monthname year"}});
+    </script>
+</div>
+*/
+
 var time_is_widget=new time_is_widget()
 function time_is_widget(){var ca=0,tD=0,tout=0,updint=1000,tl="",U="undefined",i,j,rd
 var p={n:["Sunday.Monday.Tuesday.Wednesday.Thursday.Friday.Saturday.Sun.Mon.Tue.Wed.Thu.Fri.Sat.January.February.March.April.May.June.July.August.September.October.November.December"],w:"week ",W:"week .n",dy:" day"}

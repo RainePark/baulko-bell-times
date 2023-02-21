@@ -121,6 +121,7 @@ return "";
 }
 
 function showanimegirl() {
+    checkMobile()
     if (isMobile==false) {
         path = 'qts/'; 
         var num = Math.floor( Math.random() * random_images_array.length );
@@ -129,11 +130,16 @@ function showanimegirl() {
         var imgStr2 = '<img id="qt2" style="opacity: 0;" src="' + path + img + '">';
         document.getElementsByClassName("anime")[0].innerHTML = imgStr;
         document.getElementsByClassName("animebox")[0].innerHTML = imgStr2;
+        for (i=0; i<document.getElementsByClassName("progress").length; i++){
+            document.getElementsByClassName("fullbar")[i].style.opacity=0.9
+            document.getElementsByClassName("progress")[i].style.opacity=0.85
+        }
     }
     
 }
 
 function toggleanime_text() {
+    checkMobile()
     if (!!document.getElementById("qt")==false && isMobile==false) {
         showanimegirl()
         window.alert("You found the easter egg! Anime girls will now show up every time you refresh the page! To disable it, just click on the image :)");
@@ -142,6 +148,10 @@ function toggleanime_text() {
     else {
         document.getElementsByClassName("anime")[0].innerHTML = "";
         document.getElementsByClassName("animebox")[0].innerHTML = "";
+        for (i=0; i<document.getElementsByClassName("progress").length; i++){
+            document.getElementsByClassName("fullbar")[i].style.opacity=1
+            document.getElementsByClassName("progress")[i].style.opacity=1
+        }
         setCookie('anime','no')
     }
 }
@@ -150,6 +160,10 @@ function disableanime_image() {
     if (!!document.getElementById("qt")==true) {
         document.getElementsByClassName("anime")[0].innerHTML = "";
         document.getElementsByClassName("animebox")[0].innerHTML = "";
+        for (i=0; i<document.getElementsByClassName("progress").length; i++){
+            document.getElementsByClassName("fullbar")[i].style.opacity=1
+            document.getElementsByClassName("progress")[i].style.opacity=1
+        }
         setCookie('anime','no')
     }
 }

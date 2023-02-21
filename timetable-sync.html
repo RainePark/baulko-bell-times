@@ -40,31 +40,54 @@
 </head>
 
 <body class="body theme_dark">
-	<div style="padding-left: 10px;"><p class="credits" style="text-align: left;"><a class="link" href="/">Click here to return to the main page</a></p></div>
+	<nav>
+		<p class="navtext"><a class="navlink" href="/">Home</a> &nbsp;&nbsp; || &nbsp;&nbsp; <a class="navlink" href="belltimes.html">Weekly Bell Times</a> &nbsp;&nbsp; || &nbsp;&nbsp; <a class="navlink" href="timetable-sync.html">Timetable Sync</a></p>
+	</nav>
 
 	<div>
-		<h1 class="headingtext">BAULKO BELL TIMES CLASSIC - TIMETABLE SYNC BETA</h1>
+		<h1 class="headingtext" style="margin-bottom: 20px;">BAULKO BELL TIMES CLASSIC - TIMETABLE SYNC BETA</h1>
 	</div>
 	
-	<div >
+	<div style="float: left; width:50%;" align="left">
 		<p class="info" style="margin-bottom: 8px;">Upload your Timetable here:</p>
 		<input type="file" class="credits" id="timetableupload" name="timetableics" accept=".ics"></input>
-		<p class="credits" style="margin-top: 4px;" id="uploadstatus"></p>
+	</div>
+	<div style="float: right; width:50%;" align="right">
+		<p class="info" style="margin-bottom: 8px;">Disable Timetable Sync here: </a><br>
+		<a class="button_dark" style="margin-top: 10px;" onclick="clearTimetableStorage()">
+			<span class="buttontext" style="display: grid;"">Click here to clear your timetable data</span>
+		</a>
+	</div>
+	<span style="clear:both; display:block; height: 1px;"></span>
+	<div style="height:5px; display: block;">
+		<p class="credits" style="margin-top:0px; margin-bottom: 20px; text-align: center; color: rgb(249,103,6)" id="uploadstatus">Status: No timetable found. Waiting for user upload...</p>
+	</div>
+	<br><br>
+	<div>
+		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">How to upload your Timetable</p>
+		<p class="credits" style="margin-top: 8px">
+			1. Go to the "My Timetable" page on <a class="link" href="https://baulkham-h.sentral.com.au/portal/timetable/mytimetable" target="_blank">Sentral</a><br>
+			2. Click the blue button near the top right that says "Export as iCal". This will download a file called my_timetable.ics<br>
+			3. Click the button above and upload your timetable file.<br>
+			4. Make sure that the site says your timetable has been uploaded successfully. You can now delete your timetable file from your device if you wish.<br>
+			5. You can now return to the main bell times page and see your classes!<br><br>
+			Note: You will need to reupload your timetable every time your classes change as I do not have access to your Sentral account and cannot see when it is changed.
+		</p>
 	</div>
 	<br>
 	<div>
-		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">How to upload your Timetable</p>
-		<p class="credits" style="margin-top: 8px">1. Go to the "My Timetable" page on <a class="link" href="https://baulkham-h.sentral.com.au/portal/timetable/mytimetable" target="_blank">Sentral</a><br>2. Click the blue button near the top right that says "Export as iCal". This will download a file called my_timetable.ics<br>3. Click the button above and upload your timetable file<br>4. Make sure that the site says your timetable has been uploaded successfully.<br>5. You can now return to the main bell times page and see your classes!<br><br>Note:<br>- You will need to reupload your timetable every time your classes change as I do not have access to your Sentral account and cannot see when it is changed.<br>- You do not need to keep the my_timetable.ics file downloaded on your computer and can safely delete it as your timetable is automatically stored in your browser storage.</p>
+		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">Important Details</p>
+		<p class="credits" style="margin-top: 8px">
+			Please leave any feedback for timetable sync here: <a class="link" href="https://forms.gle/EwQyxMssjXUYjQJw5" target="_blank">https://forms.gle/EwQyxMssjXUYjQJw5</a><br>
+			Submit any bugs and issues you encounter here: <a class="link" href="https://forms.gle/jhwFyXy2M2MrYKr1A" target="_blank">https://forms.gle/jhwFyXy2M2MrYKr1A</a> (or just send me an email at <a class="link" href="mailto:ergret@pm.me" target="_blank">ergret@pm.me</a>)<br><br>
+			Thanks to all the people who helped test and give feedback on timetable sync: David, Derek, Declan, Ethan, he "Arya" pig, and Muntyy<br>
+			And special thanks to all the contributors of <a class="link" href="https://github.com/kewisch/ical.js/" target="_blank">ical.js</a>. This functionality would not be possible without your hard work and generosity. ical.js is licensed under the <a class="link" href="https://www.mozilla.org/MPL/2.0/" target="_blank">Mozilla Public License</a>, version 2.0.
+		</p>
 	</div>
 	<br>
 	<div>
 		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">Privacy Policy</p>
-		<p class="credits" style="margin-top: 8px">Your timetable file is NOT uploaded to any servers and all timetable processing is done on your device. I cannot see your timetable, nor do I care to do so. The site does not collect any personal information from you and stores all timetable data locally on your browser.</p>
-	</div>
-	<br>
-	<div>
-		<p class="info" style="margin-top: 4px; margin-bottom: 8px;">Other Details</p>
-		<p class="credits" style="margin-top: 8px">Thanks for being part of the beta release of this feature! Please note that as it is still in beta, there may be issues (hopefully not).<br><br>If the timetable sync doesn't work for you, please send an email to <a class="link" href="mailto:ergret@pm.me" target="_blank">ergret@pm.me</a> and let me know what the problem is (preferably with your my_timetable.ics file but if you do not wish to share this due to privacy reasons, that's fine as well).<br><br>Special thanks to all the contributors of <a class="link" href="https://github.com/kewisch/ical.js/" target="_blank">ical.js</a>. This functionality would not be possible without your hard work and generosity. ical.js is licensed under the <a class="link" href="https://www.mozilla.org/MPL/2.0/" target="_blank">Mozilla Public License</a>, version 2.0.</p>
+		<p class="credits" style="margin-top: 8px">Your timetable file is NOT uploaded to any servers and all timetable processing is done on your device. I cannot see your timetable, nor do I care to do so. The site does not collect any personally identifiable information from you and stores all timetable data locally on your browser.</p>
 	</div>
 
 	<script src="theme.js"></script>

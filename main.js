@@ -20,6 +20,12 @@ writetotable();
 updateprogress();
 showtimetable();
 
+function isNumeric(str) {
+	if (typeof str != "string") return false // we only process strings!  
+	return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+		   !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+  }
+
 var updatetime = setInterval(update,1000);
 
 function update(){
@@ -40,6 +46,10 @@ function getdatafortoday(){
   newday = new Date();
   day = newday.getDay();
   currentsec = newday.getHours()*3600+newday.getMinutes()*60+newday.getSeconds();
+  
+  // Change day variable for debugging 
+  //day=1
+
   //get data for today's day
   if (day == 1){
     daydata = belltimes.Monday;
@@ -184,9 +194,10 @@ function updateprogress(){
 			}
 			else if ((currentsec > (daydata.times[2*a]*60)) && (currentsec < (daydata.times[2*a+1]*60))) {
 				document.getElementsByClassName("progresstext")[a+1].innerHTML = Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toString() + "m " + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toString() + "s";
-				document.title = "Baulko Bell Times (" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left)";
+				// Code for time in title last
+				//document.title = "Baulko Bell Times (" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left)";
 				// Code for time in title first
-				// document.title = "[" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left] Baulko Bell Times";
+				document.title = "[" + Math.floor((daydata.times[2*a+1]*60-currentsec)/60).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + ":" + Math.floor(((daydata.times[2*a+1]*60-currentsec)%60)).toLocaleString(undefined, {minimumIntegerDigits: 2}).toString() + " left] Baulko Bell Times";
 			}
 		}
 		//time till school start
@@ -225,10 +236,33 @@ function showtimetable(){
 			}
 		}
 		for (let x=1; x < Object.keys(daytimetable).length+1; x++){
-			document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML+"<br>"+"<a class='timetableinfo'>"+daytimetable[x][0]+"</a>";
-			document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML.replace(" class=\"notimetable\"","")
-			document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+" || Teacher: "+daytimetable[x][2]+"</a>";
-			document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML.replace(" class=\"notimetable\"","")
-		}	
+			cleanclassname=daytimetable[x][0].replace(/.$/, '').split(": ")[1].split(" ");
+			if (cleanclassname[0]=="Yr" && isNumeric(cleanclassname[1])){
+				cleanclassname.shift();
+				cleanclassname.shift();
+			}
+			cleanclassname=cleanclassname.join(" ")+" ("+daytimetable[x][0].split(": ")[0]+")";
+
+			if (daytimetable[x][1]!=""){
+				classlocation=" in " + daytimetable[x][1]
+			}
+			else{
+				classlocation=""
+			}
+
+			if (cleanclassname.split(" ")[0]=="Study"){
+				cleanclassname="Study Period"
+				classlocation=""
+			}
+			if (cleanclassname.split(" ")[3] == "Developmen"){
+				cleanclassname=cleanclassname.replace("Developmen","Development")
+			}
+
+			document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML+"<br>"+"<a class='timetableinfo'>"+cleanclassname+classlocation+"</a>";
+			document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML.replace(" class=\"notimetable\"","");
+			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+" || Teacher: "+daytimetable[x][2]+"</a>";
+			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+"</a>";
+			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML.replace(" class=\"notimetable\"","");
+		}
 	}
 }
