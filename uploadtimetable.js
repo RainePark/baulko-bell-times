@@ -1,3 +1,189 @@
-// code is obfuscated to prevent stealing sorry :(
-// if you have a valid reason for needing to see the code, please contact ergret@pm.me
-var _0x133b35=_0x3928;(function(_0x2097fa,_0x322050){var _0x4b67e1=_0x3928,_0x489cb2=_0x2097fa();while(!![]){try{var _0x26e0f0=-parseInt(_0x4b67e1(0x125))/0x1+-parseInt(_0x4b67e1(0x137))/0x2*(-parseInt(_0x4b67e1(0x108))/0x3)+parseInt(_0x4b67e1(0x13a))/0x4+-parseInt(_0x4b67e1(0x12c))/0x5+-parseInt(_0x4b67e1(0x136))/0x6+parseInt(_0x4b67e1(0x112))/0x7*(-parseInt(_0x4b67e1(0x10f))/0x8)+parseInt(_0x4b67e1(0x104))/0x9;if(_0x26e0f0===_0x322050)break;else _0x489cb2['push'](_0x489cb2['shift']());}catch(_0x3283a2){_0x489cb2['push'](_0x489cb2['shift']());}}}(_0x362c,0x5eb2e));function _0x362c(){var _0x2c7f21=['getDay','addEventListener','Room:\x20','result','244261NdXGSj','Period:\x20','Thursday','setDate','Status:\x20Timetable\x20deleted\x20successfully!\x20<a\x20class=\x27link\x27\x20href=\x27/\x27>Click\x20here<a>\x20to\x20return\x20to\x20the\x20main\x20page.','getDate','valueOf','3631485lTLGjc','Sunday','userTimetable','find','map','uploadstatus','Teacher:\x20\x20','addDays','stringify','split','1175190JPzFux','2rkMyJM','getElementById','Friday','2867572cOzVxr','join','change','5993802odeowI','innerHTML','charAt','Status:\x20Timetable\x20saved\x20successfully!\x20Please\x20<a\x20class=\x27link\x27\x20href=\x27/\x27>return\x20to\x20the\x20main\x20page<a>\x20to\x20see\x20your\x20timetable.','1087425myPvWT','toDateString','getItem','Wednesday','timetableupload','color','toLowerCase','8ganwxO','slice','files','1337259leLDur','rgb(0,200,0)','getTime','readAsText','push','prototype','Saturday','setItem','parse','style','Status:\x20Timetable\x20already\x20uploaded.\x20Ready\x20to\x20accept\x20new\x20user\x20upload...','length','replace','toUpperCase','log'];_0x362c=function(){return _0x2c7f21;};return _0x362c();}var myFile=document['getElementById'](_0x133b35(0x10c)),jcaldata,jsontimetable,days=[_0x133b35(0x12d),'Monday','Tuesday',_0x133b35(0x10b),_0x133b35(0x127),_0x133b35(0x139),_0x133b35(0x118)];myFile[_0x133b35(0x122)](_0x133b35(0x13c),function(){var _0x1d6dd8=_0x133b35,_0x216ceb=new FileReader();_0x216ceb['onload']=function(){var _0x381e16=_0x3928;jcaldata=ICAL[_0x381e16(0x11a)](_0x216ceb[_0x381e16(0x124)])[0x2];try{parseTimetable();}catch{document[_0x381e16(0x138)](_0x381e16(0x131))[_0x381e16(0x105)]='Status:\x20Timetable\x20upload\x20failed.\x20Please\x20try\x20again\x20or\x20check\x20you\x20have\x20uploaded\x20the\x20correct\x20file.',document['getElementById'](_0x381e16(0x131))[_0x381e16(0x11b)][_0x381e16(0x10d)]='rgb(255,0,0)';}},_0x216ceb[_0x1d6dd8(0x115)](this[_0x1d6dd8(0x111)][0x0]);}),Date[_0x133b35(0x117)][_0x133b35(0x133)]=function(_0x47ba5f){var _0x537553=_0x133b35,_0x17fea9=new Date(this[_0x537553(0x12b)]());return _0x17fea9[_0x537553(0x128)](_0x17fea9[_0x537553(0x12a)]()+_0x47ba5f),_0x17fea9;};function isInArray(_0x19534d,_0x3b6f70){var _0x7188d5=_0x133b35;return!!_0x19534d[_0x7188d5(0x12f)](_0x5b6b8c=>{var _0x366993=_0x7188d5;return _0x5b6b8c[_0x366993(0x114)]()==_0x3b6f70['getTime']();});}function capitalizeWords(_0x2d9355){var _0x139b4c=_0x133b35;return _0x2d9355[_0x139b4c(0x10e)]()[_0x139b4c(0x135)]('\x20')[_0x139b4c(0x130)](_0x48a1b5=>_0x48a1b5[_0x139b4c(0x106)](0x0)[_0x139b4c(0x11f)]()+_0x48a1b5['slice'](0x1))[_0x139b4c(0x13b)]('\x20');}function parseTimetable(){var _0x21d432=_0x133b35;const _0x34ce2e=[],_0x5b827b=[];firstmondayvevent=findFirstMonday(),firsteventdate=new Date(firstmondayvevent[_0x21d432(0x109)]()),lasteventdate=new Date(firstmondayvevent['addDays'](0x4)[_0x21d432(0x109)]()),currentveventdate=firsteventdate;let _0x22e7e9=0x1;while(currentveventdate<=lasteventdate){currentvevent=jcaldata[_0x22e7e9][0x1],currentveventdate=new Date(new Date(currentvevent[0x0][0x3])[_0x21d432(0x109)]()),currentveventdate<=lasteventdate&&currentveventdate>=firsteventdate&&(currentveventperiod=currentvevent[0x4][0x3][_0x21d432(0x135)]('\x0a')[0x1][_0x21d432(0x11e)](_0x21d432(0x126),''),currentveventname=currentvevent[0x5][0x3],currentveventlocation=currentvevent[0x6][0x3][_0x21d432(0x11e)](_0x21d432(0x123),''),currentveventteacher=capitalizeWords(currentvevent[0x4][0x3][_0x21d432(0x135)]('\x0a')[0x0]['replace'](_0x21d432(0x132),'')[_0x21d432(0x10e)]()),currentveventperiod[_0x21d432(0x11d)]<=0x8&&(parseInt(currentveventperiod[_0x21d432(0x110)](-0x1))>=0x1&&parseInt(currentveventperiod[_0x21d432(0x110)](-0x1))<=0x8&&(currentveventperiod=currentveventperiod['slice'](-0x1),tempclassdetails=[currentveventdate,currentveventperiod,currentveventname,currentveventlocation,currentveventteacher],_0x34ce2e[_0x21d432(0x116)](tempclassdetails),isInArray(_0x5b827b,currentveventdate)==![]&&_0x5b827b[_0x21d432(0x116)](currentveventdate)))),_0x22e7e9++;}createTimetableJson(_0x34ce2e,_0x5b827b);}function findFirstMonday(){var _0xa10599=_0x133b35;for(let _0x20cab5=0x0;_0x20cab5<jcaldata['length'];_0x20cab5++){var _0x37c4da=new Date(jcaldata[_0x20cab5][0x1][0x0][0x3]);if(_0x37c4da[_0xa10599(0x121)]()==0x1)return _0x37c4da;}}function _0x3928(_0x29c37b,_0x379152){var _0x362cb1=_0x362c();return _0x3928=function(_0x392895,_0x21e6f4){_0x392895=_0x392895-0x104;var _0x59e7e2=_0x362cb1[_0x392895];return _0x59e7e2;},_0x3928(_0x29c37b,_0x379152);}function createTimetableJson(_0x260322,_0x2522ba){var _0x206795=_0x133b35,_0x17dad2={};let _0x45a41b=0x0;for(let _0x2a3fee=0x0;_0x2a3fee<_0x2522ba[_0x206795(0x11d)];_0x2a3fee++){var _0x247635={},_0x5d9a52=![];while(_0x5d9a52==![]){classlistitemtemp=_0x260322[_0x45a41b],classlistitemtemp[0x0][_0x206795(0x114)]()==_0x2522ba[_0x2a3fee]['getTime']()?(_0x247635[classlistitemtemp[0x1]]=[classlistitemtemp[0x2],classlistitemtemp[0x3],classlistitemtemp[0x4]],_0x260322[_0x45a41b+0x1]!=undefined?_0x45a41b++:(_0x17dad2[days[_0x2522ba[_0x2a3fee]['getDay']()]]=_0x247635,_0x5d9a52=!![])):(_0x17dad2[days[_0x2522ba[_0x2a3fee]['getDay']()]]=_0x247635,_0x5d9a52=!![]);}}jsontimetable=JSON[_0x206795(0x134)](_0x17dad2),localStorage[_0x206795(0x10a)](_0x206795(0x12e))!=null&&localStorage['removeItem'](_0x206795(0x12e)),localStorage[_0x206795(0x119)](_0x206795(0x12e),jsontimetable),document[_0x206795(0x138)](_0x206795(0x131))['innerHTML']=_0x206795(0x107),document[_0x206795(0x138)](_0x206795(0x131))['style']['color']=_0x206795(0x113);}function clearTimetableStorage(){var _0x1054b1=_0x133b35;try{localStorage['removeItem']('userTimetable'),document[_0x1054b1(0x138)](_0x1054b1(0x131))['innerHTML']=_0x1054b1(0x129),document[_0x1054b1(0x138)](_0x1054b1(0x131))[_0x1054b1(0x11b)][_0x1054b1(0x10d)]=_0x1054b1(0x113);}catch{}}localStorage[_0x133b35(0x10a)](_0x133b35(0x12e))!=null&&(console[_0x133b35(0x120)](localStorage[_0x133b35(0x10a)](_0x133b35(0x12e))),document[_0x133b35(0x138)]('uploadstatus')[_0x133b35(0x105)]=_0x133b35(0x11c),document[_0x133b35(0x138)](_0x133b35(0x131))[_0x133b35(0x11b)][_0x133b35(0x10d)]=_0x133b35(0x113));
+// Define timetable file from upload box
+var myFile = document.getElementById("timetableupload");
+
+// Define global variables
+var jcaldata;
+var jsontimetable;
+
+// List of days corresponding to index of .getDay()
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+// Start parsing timetable when user uploads file
+myFile.addEventListener('change',function(){
+    var fileReader=new FileReader();
+    fileReader.onload=function(){
+        // Get vevent items from .ics file
+        jcaldata=ICAL.parse(fileReader.result)[2];
+        //console.log(jcaldata);
+        try {
+            parseTimetable();
+        }
+        catch {
+            document.getElementById("uploadstatus").innerHTML = "Status: Timetable upload failed. Please try again or check you have uploaded the correct file.";
+            document.getElementById("uploadstatus").style.color = "rgb(255,0,0)"
+        }
+    }
+   fileReader.readAsText(this.files[0]);
+})
+
+// Create function to add days to a date
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+// Function to check if time is in array
+function isInArray(array, value) {
+    return !!array.find(item => {return item.getTime() == value.getTime()});
+  }
+
+// Function to capitalize first letter of every word
+function capitalizeWords(str) {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+
+// Main timetable parsing function
+function parseTimetable(){
+    const classarray=[];
+    const datearray=[];
+
+    // Find first and last dates of a full school week
+    firstmondayvevent=findFirstMonday();
+    firsteventdate=new Date(firstmondayvevent.toDateString());
+    lasteventdate=new Date(firstmondayvevent.addDays(4).toDateString());
+
+    // Loop through all vevents within date range
+    currentveventdate=firsteventdate
+    let veventparseloop=1;
+    // Stop looping through events when past the last day of the week
+    while (currentveventdate<=lasteventdate){
+        // Iterate over vevents
+        currentvevent=jcaldata[veventparseloop][1];
+        currentveventdate=new Date(new Date(currentvevent[0][3]).toDateString());
+        // Check if vevent is within date range
+        if ((currentveventdate<=lasteventdate) && (currentveventdate>=firsteventdate)){
+            // Get class details from vevent
+            currentveventperiod=currentvevent[4][3].split("\n")[1].replace("Period: ","");
+            currentveventname=currentvevent[5][3];
+            currentveventlocation=currentvevent[6][3].replace("Room: ","");
+            currentveventteacher=capitalizeWords(currentvevent[4][3].split("\n")[0].replace("Teacher:  ","").toLowerCase());
+            // Check if class is before/after school
+            if (currentveventperiod.length<=8){
+                // Check if class is between period 1 and 8
+                if ((parseInt(currentveventperiod.slice(-1))>=1) && (parseInt(currentveventperiod.slice(-1))<=8)){
+                    // Set period to only the integer
+                    currentveventperiod=currentveventperiod.slice(-1);
+                    // Add cllass details to array of all classes
+                    tempclassdetails=[currentveventdate,currentveventperiod,currentveventname,currentveventlocation,currentveventteacher];
+                    classarray.push(tempclassdetails);
+                    // Add date to datearray if not already present
+                    if (isInArray(datearray,currentveventdate)==false){
+                        datearray.push(currentveventdate);
+                    }
+                }
+            }
+            else if (currentveventperiod === 'Roll Call') {
+                tempclassdetails=[currentveventdate,currentveventperiod,currentveventname,currentveventlocation,currentveventteacher];
+                classarray.push(tempclassdetails);
+                // Add date to datearray if not already present
+                if (isInArray(datearray,currentveventdate)==false){
+                    datearray.push(currentveventdate);
+                }
+            }
+        }
+        veventparseloop++;
+    }
+    //console.log(classarray);
+    //console.log(datearray);
+    createTimetableJson(classarray,datearray);
+}
+
+// Finds date of first monday in the ical file
+function findFirstMonday(){
+    // Loops through all vevents
+    for (let i=0; i < jcaldata.length; i++){
+        // Gets date of current vevent
+        var date=new Date(jcaldata[i][1][0][3]);
+        // Checks if date of vevent is a Monday
+        if (date.getDay()==1){
+            // Returns the date of the first monday as a Date object            
+            return date;
+        }
+    }
+}
+
+// Creates structured json file of all classes in a week
+function createTimetableJson(classarray,datearray){
+    var timetabledict={};
+    let x=0
+    // Iterate over each day to create a dictionary entry for each day
+    for (let i=0; i < datearray.length; i++){
+        var tempdaydict={};
+        var daycompleted=false;
+        // Iterate over all classes within the current loop day
+        while (daycompleted==false){
+            // Gets class details from classarray created by parseTimetable function
+            classlistitemtemp=classarray[x];
+            // Checks if the current iterated class is still on the current loop day
+            if (classlistitemtemp[0].getTime()==datearray[i].getTime()){
+                // Creates a dictionary item for that period's class details
+                if (classlistitemtemp[1] !== 'Roll Call') {
+                    tempdaydict[classlistitemtemp[1]]=[classlistitemtemp[2],classlistitemtemp[3],classlistitemtemp[4]];
+                }
+                else {
+                    tempdaydict[0]=[classlistitemtemp[2],classlistitemtemp[3],classlistitemtemp[4]];
+                }
+                // Checks if there are any remaining classes in the list
+                if (classarray[x+1]!=undefined){
+                    // Continues to the next class in classarray if there are remaining items
+                    x++;
+                }
+                // Completes the loop if all classarray items have been parsed
+                else {
+                    timetabledict[days[datearray[i].getDay()]]=tempdaydict;
+                    daycompleted=true;
+                }
+            }
+            // Writes the day dictionary to master dictionary and continues to next day if all classes for that day have been added
+            else {
+                timetabledict[days[datearray[i].getDay()]]=tempdaydict;
+                daycompleted=true;
+            }
+        }
+    }
+
+    // Convert the master timetable dictionary to JSON
+    jsontimetable=JSON.stringify(timetabledict);
+    //console.log(jsontimetable);
+
+    // Checks if there is already a timetable in localStorage and saves the new one
+    if (localStorage.getItem("userTimetable")!=null){
+        localStorage.removeItem("userTimetable");
+    }
+    localStorage.setItem("userTimetable", jsontimetable);
+    
+    // Send confirmation that timetable has been saved
+    document.getElementById("uploadstatus").innerHTML = "Status: Timetable saved successfully! Please <a class='link' href='/'>return to the main page<a> to see your timetable.";
+    document.getElementById("uploadstatus").style.color = "rgb(0,200,0)"
+}
+
+function clearTimetableStorage(){
+    try{
+        localStorage.removeItem('userTimetable')
+        document.getElementById("uploadstatus").innerHTML = "Status: Timetable deleted successfully! <a class='link' href='/'>Click here<a> to return to the main page.";
+        document.getElementById("uploadstatus").style.color = "rgb(0,200,0)"
+    }
+    catch{}
+}
+
+// Test if timetable has been saved to local storage
+if (localStorage.getItem("userTimetable")!=null){
+    console.log(localStorage.getItem("userTimetable"))
+    document.getElementById("uploadstatus").innerHTML = "Status: Timetable already uploaded. Ready to accept new user upload...";
+    document.getElementById("uploadstatus").style.color = "rgb(0,200,0)"
+}
