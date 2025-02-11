@@ -231,12 +231,15 @@ function showtimetable(){
 	if (localStorage.getItem("userTimetable")!=null){
 		var tableindexes={};
 		for (let i=0; i < daydata['period'].length; i++){
+			if (daydata['period'][i] === 'Roll Call') {
+				tableindexes[0]=i;
+			}
 			if (['1','2','3','4','5','6','7','8'].includes(daydata['period'][i].slice(-1))){
 				tableindexes[daydata['period'][i].slice(-1)]=i;
 			}
 		}
-		for (let x=1; x < Object.keys(daytimetable).length+1; x++){
-			cleanclassname=daytimetable[x][0].replace(/.$/, '').split(": ")[1].split(" ");
+		for (let x=0; x < Object.keys(daytimetable).length; x++){
+			cleanclassname=daytimetable[x][0].replace(/\.$/, '').split(": ")[1].split(" ");
 			if (cleanclassname[0]=="Yr" && isNumeric(cleanclassname[1])){
 				cleanclassname.shift();
 				cleanclassname.shift();
@@ -260,6 +263,8 @@ function showtimetable(){
 
 			document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].innerHTML+"<br>"+"<a class='timetableinfo'>"+cleanclassname+classlocation+"</a>";
 			document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[0].outerHTML.replace(" class=\"notimetable\"","");
+
+			// Alternative timetable information display
 			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+" || Teacher: "+daytimetable[x][2]+"</a>";
 			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].innerHTML+"<br><a class='timetableinfo'>Room: "+daytimetable[x][1]+"</a>";
 			//document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML=document.getElementById("tableid").rows[tableindexes[x]].cells[1].outerHTML.replace(" class=\"notimetable\"","");
